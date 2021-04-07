@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- VueJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!-- Bootstrap (CSS) -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>Vue - intro</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <img v-if="firstImg" src="img/K8.png" width="100px">
+                    <img v-else src="img/funnyFace.png" width="100px">\
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-primary" @click="flipImg">Flip img</button>
+                    <button class="btn btn-primary" @click="increaseV1">end + (v1)</button>
+                    <button class="btn btn-primary" @click="increaseV2">end + (v2)</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-primary" @click="flipValueV1">flip value (v1)</button>
+                    <button class="btn btn-primary" @click="flipValueV2">flip value (v2)</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-primary" @click="increaseStart">start + (v1)</button>
+                    <button class="btn btn-primary" >start + (v2)</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li v-for="value in limitV1" v-if="value % 2 == restV1">{{ startV1 + value }}</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li v-for="value in limitV2">{{ (value * 2) - dec }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
