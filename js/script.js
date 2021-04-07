@@ -29,15 +29,17 @@ function initVue() {
             increaseStart: function() {
                 this.startV1 += 2;
                 this.limitV1 -= 2;
+            },
+            autoFlipImg: function() {
+              setInterval('flipImg', 3000);
             }
-        }
+        },
     });
-
 }
+
 function init() {
     initVue();
     var immage = $('.immage');
-    immage.setInterval('flipImg', 5000);
 }
 // $(init);
 document.addEventListener('DOMContentLoaded', init);
