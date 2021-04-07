@@ -32,9 +32,12 @@ function initVue() {
             }
         }
     });
+
 }
 function init() {
     initVue();
+    var immage = $('.immage');
+    immage.setInterval('flipImg', 5000);
 }
 // $(init);
 document.addEventListener('DOMContentLoaded', init);

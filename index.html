@@ -10,15 +10,15 @@
         <!-- Bootstrap (CSS) -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <title>Vue - intro</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" charset="utf-8"></script>
     </head>
     <body>
         <div id="app" class="container">
             <div class="row">
                 <div class="col-12">
-                    <img v-if="firstImg" src="img/K8.png" width="100px">
-                    <img v-else src="img/funnyFace.png" width="100px">\
+                    <img class="immage" v-if="firstImg" src="img/img1.jpg" width="300px">
+                    <img class="immage" v-else src="img/img2.jpg" width="300px">
                 </div>
             </div>
             <div class="row">
