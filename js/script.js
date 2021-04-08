@@ -1,50 +1,52 @@
 function initVue() {
     new Vue({
         el: '#app',
-        data: {
-            'firstImg': true,
-            'limitV1': 20,
-            'limitV2': 10,
-            'restV1': 0,
-            'dec': 0,
-            'startV1': 0,
-            'startV2': 0
-        },
+        data:
+
+        imgs: [
+          'img/img1.jpg',
+          'img/img2.jpg',
+          'img/img3.jpg'
+        ],
+
+        activeIndex: 0
+
         methods: {
-            flipImg: function() {
-                this.firstImg = !this.firstImg;
-            },
-            increaseV1: function() {
-                this.limitV1 += 2;
-            },
-            increaseV2: function() {
-                this.limitV2++;
-            },
-            flipValueV1: function() {
-                this.restV1 = this.restV1 == 1 ? 0 : 1;
-            },
-            flipValueV2: function() {
-                this.dec = this.dec == 1 ? 0 : 1;
-            },
-            increaseStart: function() {
-                this.startV1 += 2;
-                this.limitV1 -= 2;
-            },
-            autoFlipImg: function() {
-              setInterval('flipImg', 3000);
-            }
+
         },
+        maethods: {
+          prevImg: function() {
+
+            this.activeIndex--;
+
+            if (this.activeIndex < 0) {
+
+              this.activeIndex = this.imgs.length - 1;
+
+            }
+
+          },
+          nextImg: function() {
+            this.activeIndex++;
+
+            if (this.activeIndex >= this.imgs.length) {
+
+              this.activeIndex = 0;
+
+            }
+          }
+        },
+        mounted: function() {
+          setInterval(() => {
+            this.nextImg():
+          }, 3000);
+        }
     });
 }
 
 function init() {
     initVue();
-    var immage = $('.immage');
+
 }
-// $(init);
-document.addEventListener('DOMContentLoaded', init);
-function getRandomValue(min, max) {
-    const localMin = min;
-    const localMax = max - min + 1;
-    return Math.floor(Math.random() * localMax) + localMin;
-}
+
+$(init);

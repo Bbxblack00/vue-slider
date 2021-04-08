@@ -15,43 +15,34 @@
     </head>
     <body>
         <div id="app" class="container">
-            <div class="row">
-                <div class="col-12">
-                    <span>{{ autoFlipImg() }}</span>
-                    <img class="immage" v-if="firstImg" src="img/img1.jpg" width="300px">
-                    <img class="immage" v-else src="img/img2.jpg" width="300px">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <button class="btn btn-primary" @click="flipImg">Flip img</button>
-                    <button class="btn btn-primary" @click="increaseV1">end + (v1)</button>
-                    <button class="btn btn-primary" @click="increaseV2">end + (v2)</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <button class="btn btn-primary" @click="flipValueV1">flip value (v1)</button>
-                    <button class="btn btn-primary" @click="flipValueV2">flip value (v2)</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <button class="btn btn-primary" @click="increaseStart">start + (v1)</button>
-                    <button class="btn btn-primary" >start + (v2)</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <ul>
-                        <li v-for="value in limitV1" v-if="value % 2 == restV1">{{ startV1 + value }}</li>
-                    </ul>
-                </div>
-                <div class="col-6">
-                    <ul>
-                        <li v-for="value in limitV2">{{ (value * 2) - dec }}</li>
-                    </ul>
-                </div>
+            <div class="slider-wrapper">
+              <div class="prev" @click="prevImg">
+                <i class="fas fa-angle-left"></i>
+              </div>
+
+              <div class="images">
+                <img :src="imgs[activeIndex]">
+              </div>
+
+              <div class="prev" @click="nextImg">
+                <i class="fas fa-angle-right"></i>
+              </div>
+
+              <div class="nav">
+                <!-- forma estesa -->
+                <!-- <i class="fas fa-circle active"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i> -->
+
+                <!-- forma contratta -->
+                <!-- <i class="fas fa-circle active" v-for="ind in imgs.lenght"></i> -->
+                <i class="fas fa-circle active" :class="(ind - 1 == activeIndex) ? 'active' : ''" v-for="ind in imgs.lenght"></i>
+
+                <!-- oppure con i numeri -->
+                <!-- <p v-for="ind in imgs.length"></p> -->
+
+              </div>
             </div>
         </div>
     </body>
