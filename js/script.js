@@ -1,20 +1,19 @@
 function initVue() {
     new Vue({
         el: '#app',
-        data:
+        data: {
 
-        imgs: [
-          'img/img1.jpg',
-          'img/img2.jpg',
-          'img/img3.jpg'
-        ],
 
-        activeIndex: 0
 
-        methods: {
+          imgs: [
+            'img/img1.jpg',
+            'img/img2.jpg',
+            'img/img3.jpg'
+          ],
 
+          activeIndex: 0
         },
-        maethods: {
+        methods: {
           prevImg: function() {
 
             this.activeIndex--;
@@ -38,7 +37,7 @@ function initVue() {
         },
         mounted: function() {
           setInterval(() => {
-            this.nextImg():
+            this.nextImg();
           }, 3000);
         }
     });

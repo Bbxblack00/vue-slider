@@ -8,14 +8,13 @@
 .container  {
   height: 100vh;
   width: 100vw;
-
-  background-color: #008080;
-}
-
-.container ul > li{
-  list-style: none;
 }
 
 .active {
   color: blue;
+}
+
+img {
+  height: 200px;
+  width: 500px;
 }
